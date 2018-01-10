@@ -15,9 +15,10 @@
 <script>
 /*  var hero = "hulk";
   var queryURL = "https://gateway.marvel.com:443/v1/public/characters?" + hero + "name=hulk&apikey=06490072f9b595f3a64e8d89e5c21c64";*/
-var characters = ""
+var characters = "";
+var apiKey = "&apikey=06490072f9b595f3a64e8d89e5c21c64";
+var queryURL = "https://gateway.marvel.com:443/v1/public/comics?title=avengers&apikey=06490072f9b595f3a64e8d89e5c21c64";
 
-var queryURL = "https://gateway.marvel.com:443/v1/public/comics?title=avengers&apikey=06490072f9b595f3a64e8d89e5c21c64"
 
   $.ajax({
       url: queryURL,
@@ -28,6 +29,17 @@ var queryURL = "https://gateway.marvel.com:443/v1/public/comics?title=avengers&a
       /*console.log(response.data.results[19].characters.items[0])*/
       characters = response.data.results[19].characters.items[0].resourceURI
       console.log(characters);
+    });
+
+
+      $.ajax({
+      url: characters+apiKey,
+      method: "GET"
+    }).done(function(response) {
+      // console log the response
+      /*console.log(response);*/
+      /*console.log(response.data.results[19].characters.items[0])*/
+      console.log(response);
 
     });
  </script>
