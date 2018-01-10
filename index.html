@@ -1,7 +1,7 @@
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+  <meta charset="UTF-8">
+  <title>Document</title>
 
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -13,8 +13,10 @@
 
   <!-- Code to the JavaScript File -->
 <script>
-	var hero = "hulk";
-  var queryURL = "https://gateway.marvel.com:443/v1/public/characters?name=" + hero + "&apikey=06490072f9b595f3a64e8d89e5c21c64";
+/*  var hero = "hulk";
+  var queryURL = "https://gateway.marvel.com:443/v1/public/characters?" + hero + "name=hulk&apikey=06490072f9b595f3a64e8d89e5c21c64";*/
+
+var queryURL = "https://gateway.marvel.com/v1/public/stories?series=avengers&apikey=06490072f9b595f3a64e8d89e5c21c64"
 
   $.ajax({
       url: queryURL,
