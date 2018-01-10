@@ -29,9 +29,10 @@ var queryURL = "https://gateway.marvel.com:443/v1/public/comics?title=avengers&a
       /*console.log(response.data.results[19].characters.items[0])*/
       characters = response.data.results[19].characters.items[0].resourceURI
       console.log(characters);
+      character();
     });
 
-
+function character {
       $.ajax({
       url: characters+apiKey,
       method: "GET"
@@ -42,6 +43,7 @@ var queryURL = "https://gateway.marvel.com:443/v1/public/comics?title=avengers&a
       console.log(response);
 
     });
+  }
  </script>
 
 </body>
