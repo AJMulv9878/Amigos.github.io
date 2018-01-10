@@ -1,0 +1,30 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+
+<h1>console log to see the object</h1>
+
+
+  <!-- Code to the JavaScript File -->
+<script>
+	var hero = "hulk";
+  var queryURL = "https://gateway.marvel.com:443/v1/public/characters?" + hero + "name=hulk&apikey=06490072f9b595f3a64e8d89e5c21c64";
+
+  $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      // console log the response
+      console.log(response);
+
+    });
+ </script>
+
+</body>
+</html>
