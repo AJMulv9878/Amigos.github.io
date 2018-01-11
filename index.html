@@ -17,7 +17,7 @@
   var queryURL = "https://gateway.marvel.com:443/v1/public/characters?" + hero + "name=hulk&apikey=06490072f9b595f3a64e8d89e5c21c64";*/
 var characters = "";
 var apiKey = "&apikey=06490072f9b595f3a64e8d89e5c21c64";
-var queryURL = "http://gateway.marvel.com:443/v1/public/comics?title=avengers&apikey=06490072f9b595f3a64e8d89e5c21c64";
+var queryURL = "https://gateway.marvel.com:443/v1/public/comics?title=avengers&apikey=06490072f9b595f3a64e8d89e5c21c64";
 
 
   $.ajax({
@@ -27,6 +27,7 @@ var queryURL = "http://gateway.marvel.com:443/v1/public/comics?title=avengers&ap
       // console log the response
       /*console.log(response);*/
       /*console.log(response.data.results[19].characters.items[0])*/
+      console.log(response);
       characters = response.data.results[19].characters.items[0].resourceURI
       console.log(characters);
       character();
