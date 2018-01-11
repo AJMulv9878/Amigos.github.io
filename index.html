@@ -28,15 +28,17 @@ var queryURL = "https://gateway.marvel.com:443/v1/public/comics?title=avengers&a
       /*console.log(response);*/
       /*console.log(response.data.results[19].characters.items[0])*/
       console.log(response);
+      apiKey2 = "?apikey=06490072f9b595f3a64e8d89e5c21c64";
       characters = response.data.results[19].characters.items[0].resourceURI
       characters = characters.replace(/^http:\/\//i, 'https://');
+      characters = characters + apiKey2;
       console.log(characters);
       character();
     });
 
 function character() {
       $.ajax({
-      url: characters+apiKey,
+      url: characters,
       method: "GET"
     }).done(function(response) {
       // console log the response
