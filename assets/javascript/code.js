@@ -35,7 +35,7 @@ window.onload = function() {
 			},
 			{
 				name: "Marvel's The Avengers",
-				heroes: ["Hulk", "Iron Man", "Nick Fury", "Black Widow", "Loki", "Hawkeye", "Captain America"],
+				heroes: ["Hulk", "Iron Man", "Nick Fury", "Black Widow", "Loki", "Hawkeye", "Captain America", "Thor"],
 				issue: "The Avengers Vol 1 #1",
 				search: "6"
 			},
@@ -180,13 +180,22 @@ window.onload = function() {
 
 	    var searchMovieInput = "";
 
+
 	    // On click event for the search button
 		$("#searchMovie").on("click",function(event){
 
 			event.preventDefault();
 
+			var movieArray = []; 
+
+			function errorModal(){
+	    		if (movieArray.length <= 0) {
+						$('#tipModal').modal('show');
+					}
+	    	}
+
 			// Saves input into variable
-			searchMovieInput = $("#movieNameId").val().trim();
+			searchMovieInput = $("#movieNameId").val().toLowerCase().trim();
 			console.log(searchMovieInput);
 
 			// Creates Div and puts inside variable
@@ -218,9 +227,11 @@ window.onload = function() {
 
 			// For each looping through movies to find possible matches from user search
 			movieDatabase.forEach(function(movie) {
-				var index = movie.name.indexOf(searchMovieInput);
+				var index = movie.name.toLowerCase().indexOf(searchMovieInput);
 				if (index >= 0) {
 					console.log(movie);
+					movieArray.push(movie.name);
+
 
 					$('<li/>', {
 						class: "movieList",
@@ -242,9 +253,10 @@ window.onload = function() {
 
 				else {
 					console.log("movie not found")
-					$('#tipModal').modal('show');
   				}
 		});
+
+			setTimeout(errorModal, 250);
 
 
 
@@ -266,7 +278,7 @@ window.onload = function() {
 				dateAdded: firebase.database.ServerValue.TIMESTAMP
 			});
 
-
+			$('form').trigger("reset");
 
 		});
 
