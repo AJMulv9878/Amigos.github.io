@@ -410,6 +410,7 @@ window.onload = function() {
 			console.log(characterName);
 			var search = "https://gateway.marvel.com:443/v1/public/characters?name=" + characterName + "&apikey=" + marvelKey;
 			console.log(search);
+			$('#listHeader').html(characterName + " Comics")
 
 
 			$.ajax({url: search, success: function(result) {
@@ -434,6 +435,11 @@ window.onload = function() {
 		$(document).on("click", ".comicButton", function(event) {
 			var comic = this.name;
       		comic = comic.replace(/^http:\/\//i, 'https://');
+
+      		$.ajax({url: comic, success: function(result) {
+				console.log(result);
+
+			}});
 
       		console.log(comic);
 		})
