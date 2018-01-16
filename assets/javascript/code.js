@@ -433,7 +433,7 @@ window.onload = function() {
 		});
 
 		$(document).on("click", ".comicButton", function(event) {
-			var comic = this.name + "&apikey=" + marvelKey;
+			var comic = this.name + "?apikey=" + marvelKey;
       		comic = comic.replace(/^http:\/\//i, 'https://');
 
       		$.ajax({url: comic, success: function(result) {
