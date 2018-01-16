@@ -408,7 +408,7 @@ window.onload = function() {
 		$(document).on("click", ".heroSearch", function(event) {
 			var characterName = this.name;
 			console.log(character);
-			var search = "https://gateway.marvel.com:443/v1/public/characters?name=" + character + "&apikey=" + marvelKey;
+			var search = "https://gateway.marvel.com:443/v1/public/characters?name=" + characterName + "&apikey=" + marvelKey;
 			console.log(search);
 
 
