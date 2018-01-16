@@ -414,6 +414,7 @@ window.onload = function() {
 
 			$.ajax({url: search, success: function(result) {
 				console.log(result);
+				console.log(result.data.results[0].comics.items[0]);
 
 				for (i=0; i < 10; i++) {
 					console.log(result.data.results[0].comics.items[i]);
