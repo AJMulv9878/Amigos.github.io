@@ -407,17 +407,24 @@ window.onload = function() {
 		// On click event for Character Buttons
 		$(document).on("click", ".heroSearch", function(event) {
 			var characterName = this.name;
-			console.log(character);
+			console.log(characterName);
 			var search = "https://gateway.marvel.com:443/v1/public/characters?name=" + characterName + "&apikey=" + marvelKey;
 			console.log(search);
 
 
 			$.ajax({url: search, success: function(result) {
 				console.log(result);
-				console.log(result.data.results[0].comics.items[0]);
 
 				for (i=0; i < 10; i++) {
 					console.log(result.data.results[0].comics.items[i]);
+
+					$('<input/>', {
+						type: "submit",
+						id: "heroComics",
+						class: "heroSearch",
+						value: result.data.results[0].comics.items[i].name,
+						name: result.data.results[0].comics.items[i].resourceURI
+					}).appendTo('#hero' + i);
 				}
 			}});
 		});
