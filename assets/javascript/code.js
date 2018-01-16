@@ -167,6 +167,18 @@ window.onload = function() {
 			}
 		]
 
+		var character = [
+			{
+				name: "Iron Man",
+				stories: [
+					{
+						name: "Invincible Iron Man",
+						link: "https://gateway.marvel.com:443/v1/public/comics?title=Iron%20Man&startYear=2004&orderBy=issueNumber&apikey=0a862819d585cbff1cebe3a4a9caf6e8"
+					}
+				]
+			}
+		]
+
 	      // Initialize Firebase
 	  	var config = {
 		    apiKey: "AIzaSyB8qtmHeIIwlgLmQN_ao1LZjWbhxaKQYgg",
@@ -198,63 +210,66 @@ window.onload = function() {
 			searchMovieInput = $("#movieNameId").val().toLowerCase().trim();
 			console.log(searchMovieInput);
 
-			// Creates Div and puts inside variable
-			var searchDiv = $('<div/>', {
-				class: "panel panel-default",
-				id: "resultsPanel"
-			});
+			if (searchMovieInput != ""){
 
-			// Writes created div to page on click function
-			$('#searchContainer').html(searchDiv);
+				// Creates Div and puts inside variable
+				var searchDiv = $('<div/>', {
+					class: "panel panel-default",
+					id: "resultsPanel"
+				});
 
-			// Divs for panel then appended to parent div above
-			$('<div/>', {
-				class: "panel-heading containerHeader",
-				text: "Results",
-				id: "resultsHeader"
-			}).appendTo('#resultsPanel');
+				// Writes created div to page on click function
+				$('#searchContainer').html(searchDiv);
 
-			$('<div/>', {
-				class: "panel-body",
-				id: "resultsBody"
-			}).appendTo('#resultsPanel');
+				// Divs for panel then appended to parent div above
+				$('<div/>', {
+					class: "panel-heading containerHeader",
+					text: "Results",
+					id: "resultsHeader"
+				}).appendTo('#resultsPanel');
+	
+				$('<div/>', {
+					class: "panel-body",
+					id: "resultsBody"
+				}).appendTo('#resultsPanel');
 
-			// List to list the results
-			$('<ul/>', {
-				class: "panelList",
-				id: "resultsList"
-			}).appendTo('#resultsBody');
+				// List to list the results
+				$('<ul/>', {
+					class: "panelList",
+					id: "resultsList"
+				}).appendTo('#resultsBody');
+	
+				// For each looping through movies to find possible matches from user search
+				movieDatabase.forEach(function(movie) {
+					var index = movie.name.toLowerCase().indexOf(searchMovieInput);
+					if (index >= 0) {
+						console.log(movie);
+						movieArray.push(movie.name);
 
-			// For each looping through movies to find possible matches from user search
-			movieDatabase.forEach(function(movie) {
-				var index = movie.name.toLowerCase().indexOf(searchMovieInput);
-				if (index >= 0) {
-					console.log(movie);
-					movieArray.push(movie.name);
 
-
-					$('<li/>', {
-						class: "movieList",
-						id: movie.search
-					}).appendTo('#resultsList');
+						$('<li/>', {
+							class: "movieList",
+							id: movie.search
+						}).appendTo('#resultsList');
 
 
 
 					// Creates buttons from matching movies and appends to created <ul>
-					$('<input/>', {
-						type: "submit",
-						id: "searchButton",
-						class: "movieButton",
-						value: movie.name,
-					}).appendTo('#'+movie.search);
+						$('<input/>', {
+							type: "submit",
+							id: "searchButton",
+							class: "movieButton",
+							value: movie.name,
+						}).appendTo('#'+movie.search);
 
 	
-				}
+					}
 
-				else {
-					console.log("movie not found")
-  				}
-		});
+					else {
+						console.log("movie not found")
+  					}
+				});
+			}
 
 			setTimeout(errorModal, 250);
 
@@ -391,13 +406,18 @@ window.onload = function() {
 
 		// On click event for Character Buttons
 		$(document).on("click", ".heroSearch", function(event) {
-			var character = this.name;
+			var characterName = this.name;
 			console.log(character);
 			var search = "https://gateway.marvel.com:443/v1/public/characters?name=" + character + "&apikey=" + marvelKey;
 			console.log(search);
 
+
 			$.ajax({url: search, success: function(result) {
 				console.log(result);
+
+				for (i=0; i < 10; i++) {
+					console.log(result.data.results[0].comics.items[i]);
+				}
 			}});
 		});
 
