@@ -142,3 +142,13 @@ li {
 #resultsHeader {
 	font-weight: bold;
 }
+
+.comicButton {
+	background: none;
+	border: none;
+	text-decoration: underline;
+}
+
+.comicButton:hover {
+	color: red;
+}

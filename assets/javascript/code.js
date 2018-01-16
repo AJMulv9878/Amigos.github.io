@@ -418,16 +418,25 @@ window.onload = function() {
 				for (i=0; i < 10; i++) {
 					console.log(result.data.results[0].comics.items[i]);
 
-					$('<input/>', {
+					var comicButtons = $('<input/>', {
 						type: "submit",
 						id: "heroComics",
-						class: "heroSearch",
+						class: "comicButton",
 						value: result.data.results[0].comics.items[i].name,
 						name: result.data.results[0].comics.items[i].resourceURI
-					}).appendTo('#hero' + i);
+					});
+
+					$('#hero' + i).html(comicButtons);
 				}
 			}});
 		});
+
+		$(document).on("click", ".comicButton", function(event) {
+			var comic = this.name;
+      		comic = comic.replace(/^http:\/\//i, 'https://');
+
+      		console.log(comic);
+		})
 
 
 
