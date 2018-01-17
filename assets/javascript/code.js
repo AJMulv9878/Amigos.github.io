@@ -496,14 +496,20 @@ window.onload = function() {
 								counter++;
 
 								if (counter == hero.issues.length){
-									for (k=0; k < hero.issues.length; k++){
-										dynButton = $('<input/>', {
-										type: "submit",
-										id: "heroComics" + k,
-										class: "comicButton",
-										value: name[k]
-									}).appendTo('#comic' + k);
+
+									function comicLoop(){
+										for (k=0; k < hero.issues.length; k++){
+											dynButton = $('<input/>', {
+											type: "submit",
+											id: "heroComics" + k,
+											class: "comicButton",
+											value: name[k]
+											name: "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[k] + "?apikey=" + marvelKey
+										}).appendTo('#comic' + k);
+										}
 									}
+
+									setTimeout(comicLoop, 2000);
 								}
 							}, 1000 * i);
 						}(i));
