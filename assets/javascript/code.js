@@ -493,7 +493,7 @@ window.onload = function() {
 					$('<li/>', {
 						id: "comicHeader",
 						class: "heroesHeader",
-						text: hero + " Comics"
+						text: hero.name + " Comics"
 					}).appendTo('#comicsList');
 
 
@@ -541,7 +541,7 @@ window.onload = function() {
 								if (counter == hero.issues.length){
 
 									function comicLoop(){
-										for (k=0; k < hero.issues.length; k++){
+										for (k=0; k < hero.issues.length; k++){ 
 
 											$('<li/>', {
 												id: "comic" + k,
