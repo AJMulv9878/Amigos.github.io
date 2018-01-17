@@ -515,7 +515,7 @@ window.onload = function() {
 										}
 									}
 
-									setTimeout(comicLoop, 500);
+									setTimeout(comicLoop, 250);
 								}
 							}, 100 * i);
 						}(i));
