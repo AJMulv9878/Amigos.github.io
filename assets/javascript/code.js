@@ -503,7 +503,7 @@ window.onload = function() {
 											type: "submit",
 											id: "heroComics" + k,
 											class: "comicButton",
-											value: name[k]
+											value: name[k],
 											name: "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[k] + "?apikey=" + marvelKey
 										}).appendTo('#comic' + k);
 										}
