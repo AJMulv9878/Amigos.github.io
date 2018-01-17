@@ -456,8 +456,8 @@ window.onload = function() {
 								id: "heroComics",
 								class: "comicButton",
 								value: hero.issues[i]
-							}),
-						}}),
+							});
+						}});
 					}
 				}
 			});
