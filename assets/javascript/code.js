@@ -448,15 +448,15 @@ window.onload = function() {
 					var comicList = $('<ul/>', {
 						class: "panelList",
 						id: "comicsList"
-					}).appendTo('#resultsBody');
+					});
 
-					$('#resultsBody').html(comicList);
+					$('#heroesRow').html(comicList);
 
 
 						for (i = 0; i < 8; i++){
 							var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
 							console.log(search);
-							
+
 							$('<li/>', {
 								id: "comic" + i,
 								class: "heroes"
