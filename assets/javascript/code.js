@@ -492,7 +492,7 @@ window.onload = function() {
 
 								});*/
 
-								$('#comic' + i).append(dynButton);
+								//$('#comic' + i).append(dynButton);
 								counter++;
 
 								if (counter == hero.issues.length){
