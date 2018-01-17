@@ -445,6 +445,7 @@ window.onload = function() {
 				if(heroName >= 0) {
 					console.log(hero.issues);
 					$('#listHeader').html(characterName + " Comics");
+					var comicButtons = ""
 
 					for (i = 0; i < hero.issues.length; i++){
 						var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
@@ -452,15 +453,16 @@ window.onload = function() {
 
 						$.ajax({url: search, success: function(result) {
 							console.log(result);
-							var comicButtons = $('<input/>', {
+							comicButtons = $('<input/>', {
 								type: "submit",
 								id: "heroComics",
 								class: "comicButton",
 								value: hero.issues[i]
 							});
 
-							$('#hero' + i).html(comicButtons);
 						}});
+
+						$('#hero' + i).html(comicButtons);
 					}
 				}
 			});
