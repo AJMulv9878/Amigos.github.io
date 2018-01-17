@@ -481,7 +481,7 @@ window.onload = function() {
 										value: name[i]
 
 								});
-								dynButton.text(name[i]);
+								dynButton.prop('value', name[i]);
 
 
 
