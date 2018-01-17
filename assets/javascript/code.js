@@ -175,7 +175,7 @@ window.onload = function() {
 			},
 			{
 				name: "Hulk",
-				issues: ["32830", "32831", "32832", "32833", "2582", "16088", "16089", "14269", "14272", "14273", "14274", "12398"]
+				issues: ["3530", "3955", "4081", "4195", "4446", "4764", "5055", "5207", "5414", "5671", "5811", "27399", "6099", "6245", "12398"]
 			},
 		]
 
@@ -591,7 +591,7 @@ window.onload = function() {
 					$('#comicCover').html("");
 				}
 
-				if (result.data.results[0].description != "") {
+				if (result.data.results[0].description != null) {
 					$('#comicDescription').html(result.data.results[0].description);
 				}
 				else {
