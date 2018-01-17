@@ -474,13 +474,13 @@ window.onload = function() {
 									console.log(name[i])
 
 
-									dynButton = $('<input/>', {
+									/*dynButton = $('<input/>', {
 										type: "submit",
 										id: "heroComics" + i,
 										class: "comicButton",
 										value: name[i]
 
-									});
+									});*/
 									//$('#comic' + i).append(dynButton);
 								}});
 
@@ -499,10 +499,10 @@ window.onload = function() {
 									for (k=0; k < hero.issues.length; k++){
 										dynButton = $('<input/>', {
 										type: "submit",
-										id: "heroComics" + i,
+										id: "heroComics" + k,
 										class: "comicButton",
-										value: name[i]
-									}).appendTo('#comic' + i);
+										value: name[k]
+									}).appendTo('#comic' + k);
 									}
 								}
 							}, 1000 * i);
