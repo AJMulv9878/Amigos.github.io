@@ -478,7 +478,7 @@ window.onload = function() {
 										type: "submit",
 										id: "heroComics" + i,
 										class: "comicButton",
-										value: name
+										text: name[i]
 
 								}).appendTo('#comic' + i);
 							
