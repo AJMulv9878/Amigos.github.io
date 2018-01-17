@@ -490,6 +490,12 @@ window.onload = function() {
 
 					$('#heroesRow').html(comicList);
 
+					$('<li/>', {
+						id: "comicHeader",
+						class: "heroesHeader",
+						text: hero + " Comics"
+					}).appendTo('#comicsList');
+
 
 					for (i = 0; i < hero.issues.length; i++){
 						var dynButton = "";
@@ -536,12 +542,6 @@ window.onload = function() {
 
 									function comicLoop(){
 										for (k=0; k < hero.issues.length; k++){
-
-											$('<li/>', {
-												id: "comicHeader",
-												class: "heroesHeader",
-												text: hero + " Comics"
-											}).appendTo('#comicsList');
 
 											$('<li/>', {
 												id: "comic" + k,
