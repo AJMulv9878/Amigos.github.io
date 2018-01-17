@@ -454,6 +454,9 @@ window.onload = function() {
 
 
 						for (i = 0; i < hero.issues.length; i++){
+								
+							function comicCall() {
+
 							var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
 							console.log(search);
 							var name = ""
@@ -476,6 +479,9 @@ window.onload = function() {
 									value: name
 
 								}).appendTo('#comic' + i);
+						}
+
+						setTimeout(comicCall, 1000);
 
 						}	
 
