@@ -573,7 +573,7 @@ window.onload = function() {
 			var comic = this.name;
 			var purchase = "";
 
-			$('#comicModalHeader').html(this.value);
+			$('#comicTitle').html(this.value);
 
       		$.ajax({url: comic, success: function(result) {
 				console.log(result);
@@ -581,10 +581,11 @@ window.onload = function() {
 				purchase = result.data.results[0].urls[1].url;
 				var purchaseForm = $('<form/>', {
 					action: purchase,
-					id: "purchaseForm"
+					id: "purchaseForm",
+					target: "_blank"
 				});
 
-				$('#purchase').html(purchaseForm);
+				$('#comicModalFooter').html(purchaseForm);
 
 				$('<input/>', {
 					type: "submit",
