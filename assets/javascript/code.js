@@ -456,6 +456,7 @@ window.onload = function() {
 
 					for (i = 0; i < hero.issues.length; i++){
 						var dynButton = "";
+						var counter = 1;
 						(function(i){
 							setTimeout(function(){
 
@@ -492,7 +493,13 @@ window.onload = function() {
 								});*/
 
 								$('#comic' + i).append(dynButton);
-							
+								counter++;
+
+								if (counter == hero.issues.length){
+									for (k=0; k < hero.issues.length; k++){
+										$('#comic' + k).append(dynButton);
+									}
+								}
 							}, 1000 * i);
 						}(i));
 
