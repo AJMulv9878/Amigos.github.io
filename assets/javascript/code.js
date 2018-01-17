@@ -577,8 +577,12 @@ window.onload = function() {
 
       		$.ajax({url: comic, success: function(result) {
 				console.log(result);
-				var cover = result.data.results[0].images[0].path + ".jpg";
-				var comicCover = '<img id="comicFront" height="500px" src="'+cover+'"/>';
+
+				if (result.data.results[0].images > 0) {
+					var cover = result.data.results[0].images[0].path + ".jpg";
+					var comicCover = '<img id="comicFront" height="500px" src="'+cover+'"/>';
+					$('#comicCover').html(comicCover);
+				}
 
 				purchase = result.data.results[0].urls[1].url;
 				var purchaseForm = $('<form/>', {
@@ -595,8 +599,6 @@ window.onload = function() {
 					class: "btn btn-primary",
 					id: "purchaseButton"
 				}).appendTo('#purchaseForm');
-
-				$('#comicCover').html(comicCover);
 
 
 			}});
