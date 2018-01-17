@@ -472,7 +472,7 @@ window.onload = function() {
 
 								}});
 
-								$('<input/>', {
+								$('<button/>', {
 										type: "submit",
 										id: "heroComics" + i,
 										class: "comicButton",
