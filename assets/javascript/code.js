@@ -538,6 +538,12 @@ window.onload = function() {
 										for (k=0; k < hero.issues.length; k++){
 
 											$('<li/>', {
+												id: "comicHeader",
+												class: "heroesHeader",
+												text: hero + " Comics"
+											}).appendTo('#comicsList');
+
+											$('<li/>', {
 												id: "comic" + k,
 												class: "heroes"
 											}).appendTo('#comicsList');
