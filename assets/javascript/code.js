@@ -461,8 +461,9 @@ window.onload = function() {
 								value: result.data.results[0].title
 							});
 
-							$(heroThing).html(comicButtons);
 						}});
+
+						$(heroThing).html(comicButtons);
 
 					}
 				}
