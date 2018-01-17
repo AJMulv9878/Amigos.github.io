@@ -541,7 +541,7 @@ window.onload = function() {
 								if (counter == hero.issues.length){
 
 									function comicLoop(){
-										for (k=0; k < hero.issues.length; k++){ 
+										for (k=0; k < hero.issues.length; k++){
 
 											$('<li/>', {
 												id: "comic" + k,
@@ -570,16 +570,19 @@ window.onload = function() {
 		});
 
 		$(document).on("click", ".comicButton", function(event) {
-			var comic = this.name + "?apikey=" + marvelKey;
-      		comic = comic.replace(/^http:\/\//i, 'https://');
+			var comic = this.name;
+
+			$('#comicModalHeader').html(this.value);
 
       		$.ajax({url: comic, success: function(result) {
 				console.log(result);
 
 			}});
 
-      		console.log(comic);
-		})
+			$('#comicModal').modal('show');
+
+
+		});
 
 
 
