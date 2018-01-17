@@ -469,7 +469,7 @@ window.onload = function() {
 								$.ajax({url: search, success: function(result) {
 									console.log(result.data.results[0].title);
 									name.push(result.data.results[0].title);
-
+									console.log(name[i])
 								}});
 
 								dynButton = $('<input/>', {
