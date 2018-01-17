@@ -469,11 +469,9 @@ window.onload = function() {
 
 								}).appendTo('#comic' + i);
 
-								
+								$('#infoList').html(comicList);
 
 							}});
-
-							$('#infoList').html(comicList);
 
 						}	
 
