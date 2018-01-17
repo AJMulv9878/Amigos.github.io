@@ -447,7 +447,7 @@ window.onload = function() {
 					$('#listHeader').html(characterName + " Comics");
 
 
-						for (i = 0; i < hero.issues.length; i++){
+						for (i = 0; i < 8; i++){
 							var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
 							console.log(search);
 							var comicButtons = "";
