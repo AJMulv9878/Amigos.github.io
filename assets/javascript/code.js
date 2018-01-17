@@ -472,6 +472,8 @@ window.onload = function() {
 
 								}});
 
+								console.log(name);
+
 								$('<button/>', {
 										type: "submit",
 										id: "heroComics" + i,
