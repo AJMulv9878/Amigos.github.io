@@ -511,7 +511,7 @@ window.onload = function() {
 
 									setTimeout(comicLoop, 2000);
 								}
-							}, 1000 * i);
+							}, 250 * i);
 						}(i));
 
 						console.log(dynButton);
