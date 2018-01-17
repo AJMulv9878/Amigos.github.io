@@ -451,12 +451,15 @@ window.onload = function() {
 						console.log(search);
 
 						$.ajax({url: search, success: function(result) {
+							console.log(result);
 							var comicButtons = $('<input/>', {
 								type: "submit",
 								id: "heroComics",
 								class: "comicButton",
 								value: hero.issues[i]
 							});
+
+							$('#hero' + i).html(comicButtons);
 						}});
 					}
 				}
