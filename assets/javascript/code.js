@@ -460,9 +460,10 @@ window.onload = function() {
 								value: result.data.results[0].title
 							});
 
+							$('#hero' + i).html(comicButtons);
+
 						}});
 
-						$('#hero' + i).html(comicButtons);
 					}
 				}
 			});
