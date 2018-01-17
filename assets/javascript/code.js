@@ -454,7 +454,7 @@ window.onload = function() {
 								id: "comic" + i,
 								class: "heroes"
 							});
-							var heroThing = '#hero' + i;
+							$('#infoList').html(comicList);
 
 							$.ajax({url: search, success: function(result) {
 								console.log(result);
@@ -469,8 +469,6 @@ window.onload = function() {
 
 
 							}});
-
-							$('#infoList').html(comicList);
 
 						}	
 
