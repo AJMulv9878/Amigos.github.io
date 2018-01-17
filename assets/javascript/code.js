@@ -470,7 +470,7 @@ window.onload = function() {
 						}
 					}
 
-					setTimeout(forLoop, 500);
+					setTimeout(forLoop, 2000);
 				}
 			});
 		});
