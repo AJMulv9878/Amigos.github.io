@@ -455,13 +455,12 @@ window.onload = function() {
 							console.log(result);
 							comicButtons = $('<input/>', {
 								type: "submit",
-								id: "heroComics",
+								id: "heroComics" + i,
 								class: "comicButton",
 								value: result.data.results[0].title
-
-								$('#hero' + i).html(comicButtons);
 							});
 
+							$('#hero' + i).html('#heroComics' + i);
 						}});
 
 					}
