@@ -444,17 +444,23 @@ window.onload = function() {
 				var heroName = hero.name.indexOf(characterName);
 				if(heroName >= 0) {
 					console.log(hero.issues);
-					$('#listHeader').html(characterName + " Comics");
+					
+					var comicList = $('<ul/>', {
+						class: "panelList",
+						id: "comicsList"
+					}).appendTo('#resultsBody');
+
+					$('#resultsBody').html(comicList);
 
 
 						for (i = 0; i < 8; i++){
 							var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
 							console.log(search);
-							var comicList = $('<li/>', {
+							
+							$('<li/>', {
 								id: "comic" + i,
 								class: "heroes"
-							});
-							$('#infoList').html(comicList);
+							}).appendTo('#comicsList');
 
 							$.ajax({url: search, success: function(result) {
 								console.log(result);
