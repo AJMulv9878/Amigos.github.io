@@ -167,4 +167,17 @@ li {
 
 #comicModalHeader {
 	font-weight: bold;
+	background-color: #a4161e;
+	color: white;
 }
+
+#comicMain {
+	background-color: #f3f3f2;
+	color: black;
+}
+
+#comicModalFooter {
+	background-color: #a4161e;
+	color: white;
+}
+

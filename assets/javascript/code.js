@@ -587,6 +587,13 @@ window.onload = function() {
 					$('#comicCover').html("");
 				}
 
+				if (result.data.results[0].description != "") {
+					$('#comicDescription').html(result.data.results[0].description);
+				}
+				else {
+					$('#comicDescription').html("We're sorry, there currently is no description available for this comic.");
+				}
+
 				purchase = result.data.results[0].urls[1].url;
 				var purchaseForm = $('<form/>', {
 					action: purchase,
