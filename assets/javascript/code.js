@@ -474,13 +474,18 @@ window.onload = function() {
 
 								console.log(name);
 
-								$('<input/>', {
+								dynButton = $('<button>', {
 										type: "submit",
 										id: "heroComics" + i,
 										class: "comicButton",
 										value: name[i]
 
-								}).appendTo('#comic' + i);
+								});
+								dynButton.text(name[i]);
+
+
+
+								$('#comic' + i).append(dynButton);
 							
 							}, 1000 * i);
 						}(i));
