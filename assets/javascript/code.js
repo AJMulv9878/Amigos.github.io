@@ -442,6 +442,7 @@ window.onload = function() {
 
 			character.forEach(function(hero) {
 				var heroName = hero.name.indexOf(characterName);
+				var name = [];
 				if(heroName >= 0) {
 					console.log(hero.issues);
 					
@@ -459,7 +460,6 @@ window.onload = function() {
 
 								var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
 								console	.log(search);
-								var name = ""
 
 								$('<li/>', {
 									id: "comic" + i,
@@ -468,7 +468,7 @@ window.onload = function() {
 
 								$.ajax({url: search, success: function(result) {
 									console.log(result.data.results[0].title);
-									name = result.data.results[0].title;
+									name.push(result.data.results[0].title);
 
 								}});
 
