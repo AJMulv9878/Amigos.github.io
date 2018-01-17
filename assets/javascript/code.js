@@ -509,7 +509,7 @@ window.onload = function() {
 										}
 									}
 
-									setTimeout(comicLoop, 2000);
+									setTimeout(comicLoop, 1000);
 								}
 							}, 250 * i);
 						}(i));
