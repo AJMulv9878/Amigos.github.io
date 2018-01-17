@@ -453,38 +453,36 @@ window.onload = function() {
 					$('#heroesRow').html(comicList);
 
 
-						for (i = 0; i < hero.issues.length; i++){
-								
-							function comicCall() {
+					for (i = 0; i < hero.issues.length; i++){
+						(function(i){
+							setTimeout(function(){
 
-							var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
-							console.log(search);
-							var name = ""
+								var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
+								console	.log(search);
+								var name = ""
 
-							$('<li/>', {
-								id: "comic" + i,
-								class: "heroes"
-							}).appendTo('#comicsList');
+								$('<li/>', {
+									id: "comic" + i,
+									class: "heroes"
+								}).appendTo('#comicsList');
 
-							$.ajax({url: search, success: function(result) {
-								console.log(result.data.results[0].title);
-								name = result.data.results[0].title;
+								$.ajax({url: search, success: function(result) {
+									console.log(result.data.results[0].title);
+									name = result.data.results[0].title;
 
-							}});
+								}});
 
-							$('<input/>', {
-									type: "submit",
-									id: "heroComics" + i,
-									class: "comicButton",
-									value: name
+								$('<input/>', {
+										type: "submit",
+										id: "heroComics" + i,
+										class: "comicButton",
+										value: name
 
 								}).appendTo('#comic' + i);
-						}
-
-						setTimeout(comicCall, 1000);
-
-						}	
-
+							
+							});
+						});
+					}
 				}
 			});
 		});
