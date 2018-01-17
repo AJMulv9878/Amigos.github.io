@@ -450,24 +450,30 @@ window.onload = function() {
 						for (i = 0; i < 8; i++){
 							var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
 							console.log(search);
-							var comicButtons = "";
+							var comicList = "";
 							var heroThing = '#hero' + i;
 
 							$.ajax({url: search, success: function(result) {
 								console.log(result);
-								comicButtons = $('<input/>', {
+
+								comicList = $('<li/>', {
+								id: "comic" + i,
+								class: "heroes"
+								});
+
+								$('<input/>', {
 									type: "submit",
 									id: "heroComics" + i,
 									class: "comicButton",
 									value: result.data.results[0].title
 
-								});
+								}).appendTo('#comic' + i);
 
-								console.log(comicButtons);
+								
 
 							}});
 
-							$(heroThing).html(comicButtons);
+							$('#infoList').html(comicList);
 
 						}	
 
