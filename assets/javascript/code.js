@@ -480,7 +480,7 @@ window.onload = function() {
 										value: name[i]
 
 									});
-									$('#comic' + i).append(dynButton);
+									//$('#comic' + i).append(dynButton);
 								}});
 
 								/*dynButton = $('<input/>', {
@@ -491,12 +491,7 @@ window.onload = function() {
 
 								});*/
 
-								var number = i;
-								console.log(name);
-								console.log(i);
-								console.log(name[number]);
-								console.log('Name: ' + name[i]);
-								//$('#comic' + i).append(dynButton);
+								$('#comic' + i).append(dynButton);
 							
 							}, 1000 * i);
 						}(i));
