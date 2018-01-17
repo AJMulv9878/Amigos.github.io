@@ -480,8 +480,8 @@ window.onload = function() {
 
 								}).appendTo('#comic' + i);
 							
-							});
-						});
+							}, 1000 * i);
+						}(i));
 					}
 				}
 			});
