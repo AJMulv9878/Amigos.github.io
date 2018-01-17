@@ -481,9 +481,10 @@ window.onload = function() {
 								});
 								dynButton.prop('value', name[i]);
 
+								var number = i;
 								console.log(name);
 								console.log(i);
-								console.log(name[i]);
+								console.log(name[number]);
 								console.log('Name: ' + name[i]);
 								$('#comic' + i).append(dynButton);
 							
