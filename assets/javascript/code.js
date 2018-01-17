@@ -177,6 +177,10 @@ window.onload = function() {
 				name: "Hulk",
 				issues: ["3530", "3955", "4081", "4195", "4446", "4764", "5055", "5207", "5414", "5671", "5811", "27399", "6099", "6245", "12398"]
 			},
+			{
+				name: "Nick Fury",
+				issues: ["23648", "23812", "24002", "24208", "26287", "26288", "30184", "36492", "36491", "36493", "36494"]
+			},
 		]
 
 	      // Initialize Firebase
@@ -564,7 +568,7 @@ window.onload = function() {
 
 									setTimeout(comicLoop, 500);
 								}
-							}, 250 * i);
+							}, 400 * i);
 						}(i));
 
 						console.log(dynButton);
