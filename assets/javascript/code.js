@@ -446,7 +446,6 @@ window.onload = function() {
 					console.log(hero.issues);
 					$('#listHeader').html(characterName + " Comics");
 
-					function forLoop() {
 
 						for (i = 0; i < hero.issues.length; i++){
 							var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
@@ -461,16 +460,17 @@ window.onload = function() {
 									id: "heroComics" + i,
 									class: "comicButton",
 									value: result.data.results[0].title
+
 								});
+
+								console.log(comicButtons);
 
 							}});
 
 							$(heroThing).html(comicButtons);
 
-						}
-					}
+						}	
 
-					setTimeout(forLoop, 2000);
 				}
 			});
 		});
