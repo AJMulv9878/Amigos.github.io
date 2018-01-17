@@ -470,23 +470,32 @@ window.onload = function() {
 									console.log(result.data.results[0].title);
 									name.push(result.data.results[0].title);
 									console.log(name[i])
-								}});
 
-								dynButton = $('<input/>', {
+
+									dynButton = $('<input/>', {
 										type: "submit",
 										id: "heroComics" + i,
 										class: "comicButton",
 										value: name[i]
 
-								});
-								dynButton.prop('value', name[i]);
+									});
+									$('#comic' + i).append(dynButton);
+								}});
+
+								/*dynButton = $('<input/>', {
+										type: "submit",
+										id: "heroComics" + i,
+										class: "comicButton",
+										value: name[i]
+
+								});*/
 
 								var number = i;
 								console.log(name);
 								console.log(i);
 								console.log(name[number]);
 								console.log('Name: ' + name[i]);
-								$('#comic' + i).append(dynButton);
+								//$('#comic' + i).append(dynButton);
 							
 							}, 1000 * i);
 						}(i));
