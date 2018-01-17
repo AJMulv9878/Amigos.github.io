@@ -159,3 +159,8 @@ li {
 #clientName {
     padding: 5px;
 }
+
+.heroesHeader {
+	font-weight: bold;
+	font-size: 22px;
+}
