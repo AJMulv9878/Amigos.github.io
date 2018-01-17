@@ -515,9 +515,9 @@ window.onload = function() {
 										}
 									}
 
-									setTimeout(comicLoop, 250);
+									setTimeout(comicLoop, 500);
 								}
-							}, 100 * i);
+							}, 250 * i);
 						}(i));
 
 						console.log(dynButton);
