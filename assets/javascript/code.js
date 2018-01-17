@@ -578,7 +578,7 @@ window.onload = function() {
       		$.ajax({url: comic, success: function(result) {
 				console.log(result);
 
-				if (result.data.results[0].images > 0) {
+				if (result.data.results[0].images.length > 0) {
 					var cover = result.data.results[0].images[0].path + ".jpg";
 					var comicCover = '<img id="comicFront" height="500px" src="'+cover+'"/>';
 					$('#comicCover').html(comicCover);
