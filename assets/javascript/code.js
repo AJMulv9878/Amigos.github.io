@@ -449,7 +449,8 @@ window.onload = function() {
 					for (i = 0; i < hero.issues.length; i++){
 						var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
 						console.log(search);
-						var comicButtons = ""
+						var comicButtons = "";
+						var heroThing = '#hero' + i;
 
 						$.ajax({url: search, success: function(result) {
 							console.log(result);
@@ -460,7 +461,7 @@ window.onload = function() {
 								value: result.data.results[0].title
 							});
 
-							$('#hero' + i).html('#heroComics' + i);
+							$(heroThing).html(comicButtons);
 						}});
 
 					}
