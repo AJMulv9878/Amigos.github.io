@@ -474,11 +474,11 @@ window.onload = function() {
 
 								console.log(name);
 
-								$('<button/>', {
+								$('<input/>', {
 										type: "submit",
 										id: "heroComics" + i,
 										class: "comicButton",
-										text: name[i]
+										value: name[i]
 
 								}).appendTo('#comic' + i);
 							
