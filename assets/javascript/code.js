@@ -446,26 +446,31 @@ window.onload = function() {
 					console.log(hero.issues);
 					$('#listHeader').html(characterName + " Comics");
 
-					for (i = 0; i < hero.issues.length; i++){
-						var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
-						console.log(search);
-						var comicButtons = "";
-						var heroThing = '#hero' + i;
+					function forLoop() {
 
-						$.ajax({url: search, success: function(result) {
-							console.log(result);
-							comicButtons = $('<input/>', {
-								type: "submit",
-								id: "heroComics" + i,
-								class: "comicButton",
-								value: result.data.results[0].title
-							});
+						for (i = 0; i < hero.issues.length; i++){
+							var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
+							console.log(search);
+							var comicButtons = "";
+							var heroThing = '#hero' + i;
 
-						}});
+							$.ajax({url: search, success: function(result) {
+								console.log(result);
+								comicButtons = $('<input/>', {
+									type: "submit",
+									id: "heroComics" + i,
+									class: "comicButton",
+									value: result.data.results[0].title
+								});
 
-						$(heroThing).html(comicButtons);
+							}});
 
+							$(heroThing).html(comicButtons);
+
+						}
 					}
+
+					setTimtout(forLoop, 500);
 				}
 			});
 		});
