@@ -497,7 +497,12 @@ window.onload = function() {
 
 								if (counter == hero.issues.length){
 									for (k=0; k < hero.issues.length; k++){
-										$('#comic' + k).append(dynButton);
+										dynButton = $('<input/>', {
+										type: "submit",
+										id: "heroComics" + i,
+										class: "comicButton",
+										value: name[i]
+									}).appendTo('#comic' + i);
 									}
 								}
 							}, 1000 * i);
