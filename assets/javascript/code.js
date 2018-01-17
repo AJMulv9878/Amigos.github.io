@@ -484,7 +484,7 @@ window.onload = function() {
 								dynButton.prop('value', name[i]);
 
 
-
+								console.log('Name: ' + name[i]);
 								$('#comic' + i).append(dynButton);
 							
 							}, 1000 * i);
