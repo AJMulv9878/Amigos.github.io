@@ -458,9 +458,9 @@ window.onload = function() {
 								id: "heroComics",
 								class: "comicButton",
 								value: result.data.results[0].title
-							});
 
-							$('#hero' + i).html(comicButtons);
+								$('#hero' + i).html(comicButtons);
+							});
 
 						}});
 
