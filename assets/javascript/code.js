@@ -456,6 +456,7 @@ window.onload = function() {
 						for (i = 0; i < hero.issues.length; i++){
 							var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
 							console.log(search);
+							var name = ""
 
 							$('<li/>', {
 								id: "comic" + i,
@@ -464,17 +465,17 @@ window.onload = function() {
 
 							$.ajax({url: search, success: function(result) {
 								console.log(result.data.results[0].title);
+								name = result.data.results[0].title;
 
-								$('<input/>', {
+							}});
+
+							$('<input/>', {
 									type: "submit",
 									id: "heroComics" + i,
 									class: "comicButton",
-									value: result.data.results[0].title
+									value: name
 
 								}).appendTo('#comic' + i);
-
-
-							}});
 
 						}	
 
