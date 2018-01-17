@@ -571,11 +571,26 @@ window.onload = function() {
 
 		$(document).on("click", ".comicButton", function(event) {
 			var comic = this.name;
+			var purchase = "";
 
 			$('#comicModalHeader').html(this.value);
 
       		$.ajax({url: comic, success: function(result) {
 				console.log(result);
+
+				purchase = result.data.results[0].urls[1].url;
+				var purchaseForm = $('<form/>', {
+					action: purchase
+					id: "purchaseForm"
+				});
+
+				$('#purchase').html(purchaseForm);
+
+				$('<input/>', {
+					type: "submit",
+					value: "Purchase"
+				}).appendTo('#purchaseForm');
+
 
 			}});
 
