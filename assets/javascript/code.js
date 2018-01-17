@@ -455,6 +455,7 @@ window.onload = function() {
 
 
 					for (i = 0; i < hero.issues.length; i++){
+						var dynButton = "";
 						(function(i){
 							setTimeout(function(){
 
@@ -499,6 +500,8 @@ window.onload = function() {
 							
 							}, 1000 * i);
 						}(i));
+
+						console.log(dynButton);
 					}
 				}
 			});
