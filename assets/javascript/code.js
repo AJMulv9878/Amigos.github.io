@@ -583,6 +583,9 @@ window.onload = function() {
 					var comicCover = '<img id="comicFront" height="500px" src="'+cover+'"/>';
 					$('#comicCover').html(comicCover);
 				}
+				else {
+					$('#comicCover').html("");
+				}
 
 				purchase = result.data.results[0].urls[1].url;
 				var purchaseForm = $('<form/>', {
