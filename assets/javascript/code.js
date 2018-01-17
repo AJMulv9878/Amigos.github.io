@@ -463,10 +463,10 @@ window.onload = function() {
 								var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
 								console	.log(search);
 
-								$('<li/>', {
-									id: "comic" + i,
-									class: "heroes"
-								}).appendTo('#comicsList');
+								//$('<li/>', {
+								//	id: "comic" + i,
+								//	class: "heroes"
+								//}).appendTo('#comicsList');
 
 								$.ajax({url: search, success: function(result) {
 									console.log(result.data.results[0].title);
@@ -499,6 +499,12 @@ window.onload = function() {
 
 									function comicLoop(){
 										for (k=0; k < hero.issues.length; k++){
+
+											$('<li/>', {
+												id: "comic" + k,
+												class: "heroes"
+											}).appendTo('#comicsList');
+
 											dynButton = $('<input/>', {
 											type: "submit",
 											id: "heroComics" + k,
