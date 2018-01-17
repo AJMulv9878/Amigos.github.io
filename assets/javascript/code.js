@@ -472,8 +472,6 @@ window.onload = function() {
 
 								}});
 
-								console.log(name);
-
 								dynButton = $('<input/>', {
 										type: "submit",
 										id: "heroComics" + i,
@@ -483,8 +481,9 @@ window.onload = function() {
 								});
 								dynButton.prop('value', name[i]);
 
-
+								console.log(name);
 								console.log(i);
+								console.log(name[i]);
 								console.log('Name: ' + name[i]);
 								$('#comic' + i).append(dynButton);
 							
