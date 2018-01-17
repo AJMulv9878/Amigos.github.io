@@ -474,7 +474,7 @@ window.onload = function() {
 
 								console.log(name);
 
-								dynButton = $('<button>', {
+								dynButton = $('<input/>', {
 										type: "submit",
 										id: "heroComics" + i,
 										class: "comicButton",
