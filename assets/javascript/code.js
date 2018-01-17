@@ -580,7 +580,7 @@ window.onload = function() {
 
 				purchase = result.data.results[0].urls[1].url;
 				var purchaseForm = $('<form/>', {
-					action: purchase
+					action: purchase,
 					id: "purchaseForm"
 				});
 
