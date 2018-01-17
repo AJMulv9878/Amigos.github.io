@@ -453,7 +453,7 @@ window.onload = function() {
 					$('#heroesRow').html(comicList);
 
 
-						for (i = 0; i < 8; i++){
+						for (i = 0; i < hero.issues.length; i++){
 							var search = "https://gateway.marvel.com:443/v1/public/comics/" + hero.issues[i] + "?apikey=" + marvelKey;
 							console.log(search);
 
@@ -463,7 +463,7 @@ window.onload = function() {
 							}).appendTo('#comicsList');
 
 							$.ajax({url: search, success: function(result) {
-								console.log(result);
+								console.log(result.data.results[0].title);
 
 								$('<input/>', {
 									type: "submit",
