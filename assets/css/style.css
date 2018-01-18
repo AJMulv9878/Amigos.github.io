@@ -1,9 +1,10 @@
 a{
-	font-weight: bold;
-	color: red;
-	font-size: 120px;
-	font-family: 'Bangers', cursive;
-
+	color: #a4161e;
+	font-size: 150px;
+	font-family: 'BebasNeueRegular'; 
+    font-weight: bold; 
+    font-style: normal; 
+	letter-spacing: -6px;
 
 }
 	
@@ -30,11 +31,12 @@ tr:nth-child(even) {
 }
 
 body{
-	background-color: orange;
-	/*background: url("../images/marvel_superheroes.JPG");l*/
-	width: auto;
+	background-color: #373635;
+	background: url("../images/greyWallpaper.JPG");
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
 }
 
 
@@ -51,11 +53,13 @@ body{
 	padding-left: 0px;
 	background-color: rgba(0,0,0,0);
 	 */	margin:20px;
-	border-bottom: 3px solid blue;
-	font-family: 'Bangers', cursive;
+	border-bottom: 3px solid #a4161e;
+	font-family: 'BebasNeueRegular'; 
+    font-weight: bold; 
+    font-style: normal; 
 	background-repeat: no-repeat;
-	background-size: 100%;
-	color:  #FFCB05;
+	background-size: cover;
+	color:  orange;
 
 
 }
@@ -76,7 +80,9 @@ body{
 .jumbotron {
     padding-top: 10px;
     padding-bottom: 10px;
-    font-family: 'Bangers', cursive;
+    font-family: 'BebasNeueRegular'; 
+    font-weight: bold; 
+    font-style: normal; 
 }
 
 
@@ -95,11 +101,13 @@ body{
 
 #headerPanel{
 	font-weight: bold;
-	color:black;
+	color:white;
 }
 
 h1{
-	font-family: 'Bangers', cursive;
+	font-family: 'BebasNeueRegular'; 
+    font-weight: bold; 
+    font-style: normal; 
 }
 
 ul {
@@ -194,16 +202,27 @@ li {
 	color: #373635;
 }
 
+.panel {
+	min-width: ;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border: none;
+}
+
 header {
 	background: url("../images/MARVEL_header5.jpg");
 	background-repeat: no-repeat;
-	background-size: 100%, 100%;
+	background-size: cover;
 }
 
-.panel-body {
-	min-width: 270px;
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #a4161e;
+    color: white;
+    border: none;
+
 }
 
-.panel {
-	min-width: 270px;
+.panel > .panel-body {
+	background-color: #f3f3f2;
 }
