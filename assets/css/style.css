@@ -43,7 +43,7 @@ body{
 	padding-right: 20px;
 	opacity: 1;
 	filter:alpha(opacity=100);
-	    
+	font-family: 'Allerta Stencil', sans-serif;	    
 }
 
 #jumbos{
@@ -69,6 +69,7 @@ body{
 
 #addTrain{
 	padding-left:  20px;
+	font-family: 'Allerta Stencil', sans-serif;
 	
 }
 
@@ -174,6 +175,7 @@ li {
 #comicMain {
 	background-color: #f3f3f2;
 	color: black;
+	font-family: 'Allerta Stencil', sans-serif;
 }
 
 #comicModalFooter {
@@ -194,4 +196,12 @@ header {
 	background: url("../images/MARVEL_header5.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%, 100%;
+}
+
+.panel-body {
+	min-width: 270px;
+}
+
+.panel {
+	min-width: 270px;
 }
