@@ -32,7 +32,7 @@ tr:nth-child(even) {
 
 body{
 	background-color: #373635;
-	background: url("../images/greyWallpaper.JPG");
+	background: url('../images/greyWallpaper.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
