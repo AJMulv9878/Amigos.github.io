@@ -170,6 +170,7 @@ li {
 	font-weight: bold;
 	background-color: #a4161e;
 	color: white;
+	font-family: 'Allerta Stencil', sans-serif;
 }
 
 #comicMain {
@@ -181,6 +182,7 @@ li {
 #comicModalFooter {
 	background-color: #a4161e;
 	color: white;
+	font-family: 'Allerta Stencil', sans-serif;
 }
 
 #purchaseButton {
